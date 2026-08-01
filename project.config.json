@@ -1,0 +1,20 @@
+{
+  "projectName": "seed-planet-atlas",
+  "chineseTitle": "種子星球：世界奇趣種子圖鑑與手作工坊",
+  "englishTitle": "Seed Planet Atlas",
+  "repositoryName": "seed-planet-atlas",
+  "repositoryNameSource": "english-title",
+  "level": "國小",
+  "grade": "五年級",
+  "subject": "自然科學",
+  "duration": "40 分鐘",
+  "version": "0.1.0",
+  "images": "OpenAI Image 2.0 generated",
+  "progressTracking": true,
+  "teacherGuide": true,
+  "deployment": {
+    "repositoryUrl": "",
+    "pagesUrl": "",
+    "sitesUrl": ""
+  }
+}
