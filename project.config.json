@@ -13,8 +13,8 @@
   "progressTracking": true,
   "teacherGuide": true,
   "deployment": {
-    "repositoryUrl": "",
-    "pagesUrl": "",
-    "sitesUrl": ""
+    "repositoryUrl": "https://github.com/prayer168/seed-planet-atlas",
+    "pagesUrl": "https://prayer168.github.io/seed-planet-atlas/",
+    "sitesUrl": "https://seed-planet-atlas.prayer168.chatgpt.site"
   }
 }

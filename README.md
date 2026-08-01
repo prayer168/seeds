@@ -45,3 +45,8 @@
 
 目前版本：v1.0.0（2026-08-01）。完整紀錄見 `CHANGELOG.md`。
 
+## 網站與專案
+
+- 正式互動網站：https://seed-planet-atlas.prayer168.chatgpt.site
+- GitHub Pages 入口：https://prayer168.github.io/seed-planet-atlas/
+- 原始碼：https://github.com/prayer168/seed-planet-atlas
