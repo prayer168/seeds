@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://seed-planet-atlas.prayer168.chatgpt.site"),
+  alternates: { canonical: "/" },
   title: "種子星球｜世界奇趣種子圖鑑與手作工坊",
   description: "為國小高年級設計的互動種子圖鑑：探索 12 種世界奇趣種子、8 款安全手作、種子傳播動畫與素養闖關。全站教學圖片由 Image 2.0 生成。",
   keywords: ["種子圖鑑", "自然科學", "互動教材", "種子手作", "國小自然"],
