@@ -1,38 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Starter Project",
-  description: "A clean starting point for building your site.",
-  icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  title: "種子星球｜世界奇趣種子圖鑑與手作工坊",
+  description: "為國小高年級設計的互動種子圖鑑：探索 12 種世界奇趣種子、8 款安全手作、種子傳播動畫與素養闖關。全站教學圖片由 Image 2.0 生成。",
+  keywords: ["種子圖鑑", "自然科學", "互動教材", "種子手作", "國小自然"],
+  openGraph: {
+    title: "種子星球｜一顆種子，一次環遊世界",
+    description: "探索奇妙種子、破解旅行方法，再把自然靈感變成可愛手作。",
+    type: "website",
+    locale: "zh_TW",
+    images: [{ url: "/og.png", width: 1731, height: 909, alt: "種子星球：世界奇趣種子圖鑑與手作工坊" }]
   },
+  twitter: { card: "summary_large_image", title: "種子星球", description: "世界奇趣種子圖鑑與手作工坊", images: ["/og.png"] }
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="zh-Hant"><body>{children}</body></html>;
 }
