@@ -2,8 +2,8 @@
   "projectName": "seed-planet-atlas",
   "chineseTitle": "種子星球：世界奇趣種子圖鑑與手作工坊",
   "englishTitle": "Seed Planet Atlas",
-  "repositoryName": "seed-planet-atlas",
-  "repositoryNameSource": "english-title",
+  "repositoryName": "seeds",
+  "repositoryNameSource": "user-specified",
   "level": "國小",
   "grade": "五年級",
   "subject": "自然科學",
@@ -13,8 +13,8 @@
   "progressTracking": true,
   "teacherGuide": true,
   "deployment": {
-    "repositoryUrl": "https://github.com/prayer168/seed-planet-atlas",
-    "pagesUrl": "https://prayer168.github.io/seed-planet-atlas/",
+    "repositoryUrl": "https://github.com/prayer168/seeds",
+    "pagesUrl": "https://prayer168.github.io/seeds/",
     "sitesUrl": "https://seed-planet-atlas.prayer168.chatgpt.site"
   }
 }
