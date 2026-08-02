@@ -22,7 +22,6 @@ test("server-renders the Seed Planet learning shell", async () => {
   assert.match(html, /手作工坊/);
   assert.match(html, /闖關挑戰/);
   assert.match(html, /\/generated\/hero\.png/);
-  assert.match(html, /\/og\.png/);
   assert.match(html, /\/og-cover\.png/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });
@@ -48,5 +47,5 @@ test("ships generated imagery, quiz data, accessibility, and reduced motion supp
   for (const file of ["hero.png", "seed-board-1.png", "seed-board-2.png", "seed-board-3.png", "craft-board-1.png", "craft-board-2.png", "dispersal-wind.jpg", "dispersal-water.jpg", "dispersal-animal.jpg", "dispersal-self.jpg"]) {
     await access(new URL(`../public/generated/${file}`, import.meta.url));
   }
-  await access(new URL("../public/og.png", import.meta.url));
+  await access(new URL("../public/og-cover.png", import.meta.url));
 });
