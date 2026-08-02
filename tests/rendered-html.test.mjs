@@ -23,6 +23,7 @@ test("server-renders the Seed Planet learning shell", async () => {
   assert.match(html, /闖關挑戰/);
   assert.match(html, /\/generated\/hero\.png/);
   assert.match(html, /\/og\.png/);
+  assert.match(html, /\/og-cover\.png/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });
 

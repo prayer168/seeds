@@ -29,6 +29,7 @@
 - `app/`：網站介面、互動與樣式
 - `data/`：題庫、教材摘要、資源與課綱說明
 - `public/generated/`：Image 2.0 生成圖片
+- `public/share/facebook-post.html`：中英雙語 Facebook 貼文與一鍵複製頁
 - `docs/`：教案、設計規格、來源與測試報告
 - `.openai/hosting.json`：Sites 發布設定
 
@@ -49,3 +50,4 @@
 - 正式互動網站：https://seed-planet-atlas.prayer168.chatgpt.site
 - GitHub Pages 公開網站：https://prayer168.github.io/seeds/
 - 原始碼：https://github.com/prayer168/seeds
+- Facebook 貼文複製頁：https://prayer168.github.io/seeds/share/facebook-post.html

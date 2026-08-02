@@ -13,6 +13,7 @@ test("exports the complete site directly under the GitHub Pages base path", asyn
   assert.match(html, /世界圖鑑/);
   assert.match(html, /手作工坊/);
   assert.match(html, /闖關挑戰/);
+  assert.match(html, /og-cover\.png/);
   assert.doesNotMatch(html, /http-equiv=["']refresh/i);
   assert.doesNotMatch(html, /chatgpt\.site|Continue with ChatGPT/i);
 });
@@ -34,4 +35,9 @@ test("includes every generated teaching image and social card", async () => {
   }
 
   await access(new URL("og.png", outputRoot));
+  await access(new URL("og-cover.png", outputRoot));
+  const shareHtml = await readFile(new URL("share/facebook-post.html", outputRoot), "utf8");
+  assert.match(shareHtml, /複製全部/);
+  assert.match(shareHtml, /種子星球/);
+  assert.match(shareHtml, /https:\/\/prayer168\.github\.io\/seeds\/og-cover\.png/);
 });
