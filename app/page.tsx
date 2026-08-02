@@ -3,6 +3,9 @@
 import { useEffect, useMemo, useState } from "react";
 import quizData from "@/data/quiz.json";
 
+const publicBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const publicAsset = (path: string) => `${publicBasePath}${path}`;
+
 type AtlasVisual = { board: number; index: number };
 type Seed = {
   id: string;
@@ -58,13 +61,13 @@ const resources = [
 function AtlasImage({ visual, label, className = "" }: { visual: AtlasVisual; label: string; className?: string }) {
   const col = visual.index % 2;
   const row = Math.floor(visual.index / 2);
-  return <div className={`atlas-image ${className}`} role="img" aria-label={`${label}，由 Image 2.0 生成的教學圖片`} style={{ backgroundImage: `url(/generated/${visual.board <= 3 ? `seed-board-${visual.board}` : `craft-board-${visual.board - 3}`}.png)`, backgroundPosition: `${col * 100}% ${row * 100}%` }} />;
+  return <div className={`atlas-image ${className}`} role="img" aria-label={`${label}，由 Image 2.0 生成的教學圖片`} style={{ backgroundImage: `url(${publicAsset(`/generated/${visual.board <= 3 ? `seed-board-${visual.board}` : `craft-board-${visual.board - 3}`}.png`)})`, backgroundPosition: `${col * 100}% ${row * 100}%` }} />;
 }
 
 function CraftImage({ board, index, label }: { board: number; index: number; label: string }) {
   const col = index % 2;
   const row = Math.floor(index / 2);
-  return <div className="atlas-image craft-image" role="img" aria-label={`${label}，由 Image 2.0 生成的手作示意圖`} style={{ backgroundImage: `url(/generated/craft-board-${board}.png)`, backgroundPosition: `${col * 100}% ${row * 100}%` }} />;
+  return <div className="atlas-image craft-image" role="img" aria-label={`${label}，由 Image 2.0 生成的手作示意圖`} style={{ backgroundImage: `url(${publicAsset(`/generated/craft-board-${board}.png`)})`, backgroundPosition: `${col * 100}% ${row * 100}%` }} />;
 }
 
 export default function Home() {
@@ -144,7 +147,7 @@ export default function Home() {
       <section className="panel" aria-live="polite">
         {activeTab === 0 && (
           <div className="hero-panel">
-            <img src="/generated/hero.png" alt="由 Image 2.0 生成的種子世界地圖，有海椰子、翅果、蓮蓬與可愛橡實角色" />
+            <img src={publicAsset("/generated/hero.png")} alt="由 Image 2.0 生成的種子世界地圖，有海椰子、翅果、蓮蓬與可愛橡實角色" />
             <div className="hero-copy">
               <span className="eyebrow">一顆種子，一次環遊世界</span>
               <h1>小小種子，<br /><em>藏著大大的旅行。</em></h1>
