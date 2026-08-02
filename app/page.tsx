@@ -58,6 +58,69 @@ const resources = [
   { title: "亞利桑那州立大學：口袋種子實驗", type: "互動實驗", grade: "國小高年級", url: "https://askabiologist.asu.edu/experiments/vpocketseeds_teachers", desc: "用真實資料觀察發芽、向地性與公平測試。" }
 ];
 
+const dispersalMethods = [
+  {
+    id: "wind",
+    number: "01",
+    title: "風力傳播",
+    english: "WIND DISPERSAL",
+    tagline: "把空氣變成交通工具",
+    image: "/generated/dispersal-wind.jpg",
+    alt: "蒲公英冠毛與楓樹翅果從母株離開，隨風飛過草地並落到遠方土壤的風力傳播過程",
+    summary: "風不只是把種子吹走；種子的輕巧構造會增加與空氣接觸的面積，減慢下降速度，爭取更多在空中移動的時間。",
+    mechanism: "蒲公英的冠毛像降落傘，細毛能增加空氣阻力；楓樹翅果的薄翅則會讓果實自轉，下降較慢，也更容易被側風吹離母樹。",
+    clues: ["體積小、重量輕", "具有冠毛、棉絮或薄翅", "成熟時常在乾燥、有風的天氣釋放"],
+    steps: ["果實成熟並變乾", "冠毛張開或翅果脫離母株", "氣流托住、旋轉或推動種子", "風變弱或遇到障礙後落地"],
+    examples: "蒲公英、楓樹、木棉、蘿藦",
+    note: "風力傳播不保證每顆種子都飛得很遠。釋放高度、風速、濕度與周圍障礙物，都會改變最後的落點。"
+  },
+  {
+    id: "water",
+    number: "02",
+    title: "水力傳播",
+    english: "WATER DISPERSAL",
+    tagline: "用浮力展開漂流旅程",
+    image: "/generated/dispersal-water.jpg",
+    alt: "椰子與海心豆憑藉纖維外層和堅硬種皮漂在水面，隨河流與海浪移動後被沖上沙灘",
+    summary: "河流、雨水、潮汐與洋流都能搬運種子。能漂流的果實或種子通常不容易立刻吸水，還要有足夠浮力，才能在水面保持一段時間。",
+    mechanism: "椰子的厚纖維層中保留許多空隙，像天然救生衣；海心豆具有堅硬、較防水的外殼。水流提供推力，把它們從河岸帶到下游，甚至送過海面。",
+    clues: ["外殼厚實、耐碰撞", "纖維層或內部空隙能提供浮力", "表面不易立即吸水腐壞"],
+    steps: ["果實掉入河川或海邊", "外殼隔水並讓種子浮在水面", "水流、潮汐或海浪持續搬運", "被沖上岸後等待適合環境萌芽"],
+    examples: "椰子、海心豆、蓮、紅樹林植物",
+    note: "能漂浮不代表永遠不吸水。抵達合適地點後，外殼仍需在磨損、時間或環境條件改變下，讓水進入並啟動萌芽。"
+  },
+  {
+    id: "animal",
+    number: "03",
+    title: "動物傳播",
+    english: "ANIMAL DISPERSAL",
+    tagline: "搭便車、被吃下或被收藏",
+    image: "/generated/dispersal-animal.jpg",
+    alt: "帶鉤果實附在狐狸毛上，以及鳥吃下紅色果實後把種子帶到遠處的兩種動物傳播方式",
+    summary: "動物移動範圍大，種子便利用牠們的毛、羽毛、消化道或儲藏行為離開母株。同一種『動物傳播』其實包含好幾種不同方法。",
+    mechanism: "蒼耳、牛蒡等果實以鉤刺附著在毛上；多汁且醒目的果實吸引鳥獸取食，種子靠堅硬種皮通過消化道；松鼠埋藏後忘記取回的堅果，也可能在新地點發芽。",
+    clues: ["表面有鉤、刺、倒毛或黏性", "果肉鮮豔多汁，種子外殼較耐磨", "種子或果實富含養分，容易被搬走收藏"],
+    steps: ["果實附著、被吃下或被搬走", "動物行走或飛行到另一個地點", "果實脫落、種子排出或藏果被遺忘", "種子在遠離母株的位置落地"],
+    examples: "牛蒡、蒼耳、桑葚、樟樹果實、栗子",
+    note: "動物通常不是有意幫植物播種，而是在覓食、移動與整理毛皮時意外完成運送；植物則以鉤刺、顏色與果肉提高被帶走的機會。"
+  },
+  {
+    id: "self",
+    number: "04",
+    title: "自力傳播",
+    english: "SELF DISPERSAL",
+    tagline: "果莢自己蓄力，把種子彈出去",
+    image: "/generated/dispersal-self.jpg",
+    alt: "成熟鳳仙花果莢裂開並向後捲曲，把圓形種子彈射到周圍土壤的自力傳播過程",
+    summary: "有些植物不等待風、水或動物，而是讓果實在成熟乾燥時累積張力。當果皮沿著縫線裂開，儲存的彈性能量會快速釋放，把種子射向四周。",
+    mechanism: "鳳仙花果莢的不同組織收縮程度不一，成熟後只要受到輕微碰觸就可能突然裂開；果皮迅速向後捲曲，像鬆開繃緊的彈簧，將種子推出。",
+    clues: ["果實有明顯縫線或狹長果莢", "成熟果皮乾燥、繃緊", "裂開後果瓣常扭轉或向後捲曲"],
+    steps: ["果莢成熟，果皮逐漸失水", "不同部位收縮並累積張力", "果莢沿縫線瞬間裂開、果瓣捲曲", "種子被彈出並散落在母株四周"],
+    examples: "鳳仙花、酢漿草、噴瓜、部分豆科植物",
+    note: "自力傳播的距離通常比風或動物傳播短，但能在一瞬間把許多種子分散到母株周圍，減少全部擠在同一個位置。"
+  }
+];
+
 function AtlasImage({ visual, label, className = "" }: { visual: AtlasVisual; label: string; className?: string }) {
   const col = visual.index % 2;
   const row = Math.floor(visual.index / 2);
@@ -79,22 +142,23 @@ export default function Home() {
   const [selectedSeed, setSelectedSeed] = useState<Seed | null>(null);
   const [selectedCraft, setSelectedCraft] = useState<(typeof crafts)[number] | null>(null);
   const [checkedSteps, setCheckedSteps] = useState<number[]>([]);
-  const [simMode, setSimMode] = useState<"wind" | "water" | "animal">("wind");
-  const [simRunning, setSimRunning] = useState(false);
   const [quizIndex, setQuizIndex] = useState(0);
   const [choice, setChoice] = useState<number | null>(null);
   const [score, setScore] = useState(0);
   const [quizDone, setQuizDone] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem("seed-planet-progress");
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        setVisited(parsed.visited ?? [0]);
-        setFavorites(parsed.favorites ?? []);
-      } catch { /* ignore damaged local data */ }
-    }
+    const frame = window.requestAnimationFrame(() => {
+      const saved = localStorage.getItem("seed-planet-progress");
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          setVisited(parsed.visited ?? [0]);
+          setFavorites(parsed.favorites ?? []);
+        } catch { /* ignore damaged local data */ }
+      }
+    });
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   useEffect(() => {
@@ -140,13 +204,14 @@ export default function Home() {
         <div className="progress-wrap" aria-label={`學習進度 ${progress}%`}><span>{progress}%</span><div className="progress-track"><i style={{ width: `${progress}%` }} /></div></div>
       </header>
 
-      <nav className="tabs" aria-label="教材頁籤">
-        {tabs.map((tab, index) => <button key={tab} className={activeTab === index ? "active" : ""} onClick={() => goTab(index)} aria-selected={activeTab === index}>{String(index + 1).padStart(2, "0")}<span>{tab}</span>{visited.includes(index) && <i aria-label="已探索">✓</i>}</button>)}
+      <nav className="tabs" aria-label="教材頁籤" role="tablist">
+        {tabs.map((tab, index) => <button key={tab} id={`tab-${index}`} role="tab" aria-controls="learning-panel" className={activeTab === index ? "active" : ""} onClick={() => goTab(index)} aria-selected={activeTab === index}>{String(index + 1).padStart(2, "0")}<span>{tab}</span>{visited.includes(index) && <i aria-label="已探索">✓</i>}</button>)}
       </nav>
 
-      <section className="panel" aria-live="polite">
+      <section className="panel" id="learning-panel" role="tabpanel" aria-labelledby={`tab-${activeTab}`} aria-live="polite">
         {activeTab === 0 && (
           <div className="hero-panel">
+            {/* eslint-disable-next-line @next/next/no-img-element -- static export uses pre-optimized generated artwork */}
             <img src={publicAsset("/generated/hero.png")} alt="由 Image 2.0 生成的種子世界地圖，有海椰子、翅果、蓮蓬與可愛橡實角色" />
             <div className="hero-copy">
               <span className="eyebrow">一顆種子，一次環遊世界</span>
@@ -178,15 +243,34 @@ export default function Home() {
 
         {activeTab === 2 && (
           <div className="secret-panel">
-            <div className="section-heading"><div><span className="eyebrow">SEED LAB</span><h2>一顆種子，三份行李</h2><p>種子不是沉睡的小石頭，而是一套準備出發的生命系統。</p></div></div>
-            <div className="concept-grid">
-              <article><AtlasImage visual={{ board: 3, index: 0 }} label="種皮紋理" /><span>01</span><h3>種皮｜防護衣</h3><p>包住內部，減少乾燥與碰撞造成的傷害。</p></article>
-              <article><AtlasImage visual={{ board: 2, index: 1 }} label="種子內的養分" /><span>02</span><h3>養分｜小便當</h3><p>蛋白質、油脂或澱粉，支持幼苗剛萌芽的日子。</p></article>
-              <article><AtlasImage visual={{ board: 2, index: 0 }} label="等待萌芽的種子" /><span>03</span><h3>胚｜迷你植物</h3><p>內藏未來的幼根與幼芽，遇到適合條件就開始生長。</p></article>
+            <div className="section-heading dispersal-heading"><div><span className="eyebrow">SEED JOURNEYS</span><h2>種子的四種旅行方式</h2><p>植物不會走路，卻能利用構造與環境，把下一代送到新的生長地點。</p></div><aside className="reading-note"><b>閱讀方法</b><span>依序找出「搬運力量 → 種子構造 → 移動結果」三個證據。</span></aside></div>
+            <div className="dispersal-overview" aria-label="四種種子傳播方式摘要">
+              <span><b>風</b> 輕、寬、能旋轉</span>
+              <span><b>水</b> 能浮、外殼耐水</span>
+              <span><b>動物</b> 附著、取食、收藏</span>
+              <span><b>自力</b> 果實裂開、彈射</span>
             </div>
-            <div className="simulation">
-              <div className="sim-stage" aria-label="種子傳播方式動畫"><div className={`sim-landscape mode-${simMode}`}><div className={`demo-seed ${simRunning ? "running" : ""}`}>●</div><div className="mother-plant">♧</div><div className="destination">⌂</div></div></div>
-              <div className="sim-copy"><span className="eyebrow">互動觀察站</span><h3>誰把種子送到遠方？</h3><p>選一種旅行方式，觀察種子的形狀如何幫助它離開母株。</p><div className="mode-buttons">{([['wind','風：輕與寬'],['water','水：浮與防水'],['animal','動物：醒目或能附著']] as const).map(([key,label]) => <button key={key} className={simMode === key ? "active" : ""} onClick={() => {setSimMode(key); setSimRunning(false);}}>{label}</button>)}</div><div className="sim-feedback">{simMode === "wind" ? "翅或冠毛增加阻力，讓種子慢慢落下。" : simMode === "water" ? "硬殼、纖維或空氣層讓種子不易進水並保持浮力。" : "果肉、鮮豔外被、鉤刺或黏性，讓動物成為交通工具。"}</div><div className="sim-controls"><button className="primary small" onClick={() => setSimRunning(!simRunning)}>{simRunning ? "暫停" : "播放"}</button><button className="secondary small" onClick={() => {setSimRunning(false); setTimeout(() => setSimRunning(true), 20);}}>重播</button><button className="secondary small" onClick={() => setSimRunning(false)}>重設</button></div><small>觀察任務：找出「形狀 → 移動方式 → 新位置」三個證據。</small></div>
+            <div className="dispersal-list">
+              {dispersalMethods.map((method) => (
+                <article className={`dispersal-card method-${method.id}`} key={method.id}>
+                  <figure className="dispersal-figure">
+                    {/* eslint-disable-next-line @next/next/no-img-element -- static export uses pre-optimized generated artwork */}
+                    <img src={publicAsset(method.image)} alt={method.alt} loading="lazy" decoding="async" />
+                    <figcaption><span>IMAGE 2.0 GENERATED</span>圖中呈現從母株、搬運到落地的完整過程</figcaption>
+                  </figure>
+                  <div className="dispersal-copy">
+                    <header><span className="method-number">{method.number}</span><div><small>{method.english}</small><h3>{method.title}</h3><strong>{method.tagline}</strong></div></header>
+                    <p className="method-summary">{method.summary}</p>
+                    <section className="mechanism-box"><h4>它怎麼做到？</h4><p>{method.mechanism}</p></section>
+                    <div className="method-details">
+                      <section><h4>看構造找證據</h4><ul>{method.clues.map((clue) => <li key={clue}>{clue}</li>)}</ul></section>
+                      <section><h4>傳播四步驟</h4><ol>{method.steps.map((step) => <li key={step}>{step}</li>)}</ol></section>
+                    </div>
+                    <dl className="method-examples"><dt>代表植物</dt><dd>{method.examples}</dd></dl>
+                    <p className="method-note"><b>容易忽略：</b>{method.note}</p>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         )}

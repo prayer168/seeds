@@ -25,6 +25,10 @@ test("includes every generated teaching image and social card", async () => {
     "seed-board-3.png",
     "craft-board-1.png",
     "craft-board-2.png",
+    "dispersal-wind.jpg",
+    "dispersal-water.jpg",
+    "dispersal-animal.jpg",
+    "dispersal-self.jpg",
   ]) {
     await access(new URL(`generated/${file}`, outputRoot));
   }

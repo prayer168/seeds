@@ -38,8 +38,13 @@ test("ships generated imagery, quiz data, accessibility, and reduced motion supp
   assert.match(page, /localStorage\.setItem\("seed-planet-progress"/);
   assert.match(page, /Image 2\.0 生成/);
   assert.match(page, /安全小約定/);
+  assert.match(page, /風力傳播/);
+  assert.match(page, /水力傳播/);
+  assert.match(page, /動物傳播/);
+  assert.match(page, /自力傳播/);
+  assert.doesNotMatch(page, /simRunning|simMode|互動觀察站|傳播方式動畫/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
-  for (const file of ["hero.png", "seed-board-1.png", "seed-board-2.png", "seed-board-3.png", "craft-board-1.png", "craft-board-2.png"]) {
+  for (const file of ["hero.png", "seed-board-1.png", "seed-board-2.png", "seed-board-3.png", "craft-board-1.png", "craft-board-2.png", "dispersal-wind.jpg", "dispersal-water.jpg", "dispersal-animal.jpg", "dispersal-self.jpg"]) {
     await access(new URL(`../public/generated/${file}`, import.meta.url));
   }
   await access(new URL("../public/og.png", import.meta.url));
