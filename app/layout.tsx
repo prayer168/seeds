@@ -18,5 +18,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="zh-Hant"><body>{children}</body></html>;
+  return <html lang="zh-Hant"><body>{children}<script src="https://prayer168.github.io/science-portal/assets/material-visit-count.js" data-material="https://prayer168.github.io/seeds/" defer /></body></html>;
 }
